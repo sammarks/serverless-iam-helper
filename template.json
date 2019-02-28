@@ -1,0 +1,231 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:List*",
+                "cloudformation:Get*",
+                "cloudformation:PreviewStackUpdate",
+                "cloudformation:ValidateTemplate"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack",
+                "cloudformation:CreateUploadBucket",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeStackResource",
+                "cloudformation:DescribeStackResources",
+                "cloudformation:UpdateStack",
+                "cloudformation:DescribeStacks"
+            ],
+            "Resource": [
+                "arn:aws:cloudformation:[REGION]:*:stack/[SERVICE]-[STAGE]/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:Get*",
+                "lambda:List*",
+                "lambda:CreateFunction",
+		"lambda:CreateEventSourceMapping"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:AddPermission",
+                "lambda:CreateAlias",
+                "lambda:DeleteFunction",
+                "lambda:InvokeFunction",
+                "lambda:PublishVersion",
+                "lambda:RemovePermission",
+                "lambda:Update*"
+            ],
+            "Resource": [
+                "arn:aws:lambda:[REGION]:*:function:[SERVICE]-[STAGE]-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "apigateway:GET",
+                "apigateway:POST",
+                "apigateway:PUT",
+                "apigateway:DELETE"
+            ],
+            "Resource": [
+                "arn:aws:apigateway:*::/restapis*",
+                "arn:aws:apigateway:[REGION]::/usageplans*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:PassRole",
+		"iam:GetRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "kinesis:*",
+            "Resource": [
+                "arn:aws:kinesis:*:*:stream/[SERVICE]-[STAGE]-[REGION]"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:*",
+            "Resource": [
+                "arn:aws:iam::*:role/[SERVICE]-[STAGE]-[REGION]-lambdaRole"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "sqs:*",
+            "Resource": [
+                "arn:aws:sqs:*:*:[SERVICE]-[STAGE]-[REGION]"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:GetMetricStatistics"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream"
+            ],
+            "Resource": [
+                "arn:aws:logs:[REGION]:*:*"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": [
+                "arn:aws:logs:[REGION]:*:*:/aws/lambda/[SERVICE]-[STAGE]-*"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogStreams",
+                "logs:DescribeLogGroups",
+                "logs:FilterLogEvents"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "events:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "SNS:*"
+            ],
+            "Resource": [
+                "arn:aws:sns:[REGION]:*:*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "waf:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudfront:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53:*",
+                "route53domains:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:PutRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DeleteRole"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
