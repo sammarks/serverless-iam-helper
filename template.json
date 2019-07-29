@@ -25,6 +25,15 @@
         {
             "Effect": "Allow",
             "Action": [
+                "rds:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "cloudformation:CreateStack",
                 "cloudformation:CreateUploadBucket",
                 "cloudformation:DeleteStack",
@@ -91,7 +100,7 @@
             "Effect": "Allow",
             "Action": [
                 "iam:PassRole",
-		"iam:GetRole"
+		        "iam:GetRole"
             ],
             "Resource": [
                 "arn:aws:iam::*:role/*"
@@ -115,7 +124,7 @@
             "Effect": "Allow",
             "Action": "sqs:*",
             "Resource": [
-                "arn:aws:sqs:*:*:[SERVICE]-[STAGE]-[REGION]"
+                "*"
             ]
         },
         {
@@ -221,7 +230,8 @@
                 "iam:AttachRolePolicy",
                 "iam:DetachRolePolicy",
                 "iam:DeleteRolePolicy",
-                "iam:DeleteRole"
+                "iam:DeleteRole",
+                "iam:CreateServiceLinkedRole"
             ],
             "Resource": [
                 "*"
