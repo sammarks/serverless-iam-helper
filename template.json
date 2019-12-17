@@ -63,7 +63,7 @@
                 "lambda:Get*",
                 "lambda:List*",
                 "lambda:CreateFunction",
-		"lambda:CreateEventSourceMapping"
+                "lambda:CreateEventSourceMapping"
             ],
             "Resource": [
                 "*"
@@ -102,7 +102,7 @@
             "Effect": "Allow",
             "Action": [
                 "iam:PassRole",
-		        "iam:GetRole"
+                "iam:GetRole"
             ],
             "Resource": [
                 "arn:aws:iam::*:role/*"
