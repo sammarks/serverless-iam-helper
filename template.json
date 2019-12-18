@@ -8,7 +8,10 @@
                 "cloudformation:Get*",
                 "cloudformation:PreviewStackUpdate",
                 "cloudformation:ValidateTemplate",
-                "cloudformation:CreateChangeSet"
+                "cloudformation:CreateChangeSet",
+                "serverlessrepo:*",
+                "lambda:*",
+                "apigateway:*"
             ],
             "Resource": [
                 "*"
@@ -60,47 +63,6 @@
         {
             "Effect": "Allow",
             "Action": [
-                "lambda:Get*",
-                "lambda:List*",
-                "lambda:CreateFunction",
-                "lambda:CreateEventSourceMapping"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "lambda:AddPermission",
-                "lambda:CreateAlias",
-                "lambda:DeleteFunction",
-                "lambda:InvokeFunction",
-                "lambda:PublishVersion",
-                "lambda:RemovePermission",
-                "lambda:Update*"
-            ],
-            "Resource": [
-                "arn:aws:lambda:[REGION]:*:function:[SERVICE]-[STAGE]-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "apigateway:GET",
-                "apigateway:POST",
-                "apigateway:PUT",
-                "apigateway:DELETE",
-                "apigateway:PATCH"
-            ],
-            "Resource": [
-                "arn:aws:apigateway:*::/restapis*",
-                "arn:aws:apigateway:[REGION]::/usageplans*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
                 "iam:PassRole",
                 "iam:GetRole"
             ],
@@ -140,20 +102,10 @@
         },
         {
             "Action": [
-                "logs:CreateLogGroup",
-                "logs:CreateLogStream"
-            ],
-            "Resource": [
-                "arn:aws:logs:[REGION]:*:*"
-            ],
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
                 "logs:*"
             ],
             "Resource": [
-                "arn:aws:logs:[REGION]:*:*:/aws/lambda/[SERVICE]-[STAGE]-*"
+                "arn:aws:logs:[REGION]:*:*"
             ],
             "Effect": "Allow"
         },
