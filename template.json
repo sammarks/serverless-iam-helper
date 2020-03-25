@@ -168,6 +168,15 @@
         {
             "Effect": "Allow",
             "Action": [
+                "ecs:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "route53:*",
                 "route53domains:*"
             ],
@@ -185,7 +194,8 @@
                 "iam:DetachRolePolicy",
                 "iam:DeleteRolePolicy",
                 "iam:DeleteRole",
-                "iam:CreateServiceLinkedRole"
+                "iam:CreateServiceLinkedRole",
+                "iam:Update*"
             ],
             "Resource": [
                 "*"
