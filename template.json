@@ -8,7 +8,8 @@
                 "serverlessrepo:*",
                 "lambda:*",
                 "apigateway:*",
-                "autoscaling:*"
+                "autoscaling:*",
+                "secretsmanager:*"
             ],
             "Resource": [
                 "*"
