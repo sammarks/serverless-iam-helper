@@ -9,7 +9,9 @@
                 "lambda:*",
                 "apigateway:*",
                 "autoscaling:*",
-                "secretsmanager:*"
+                "secretsmanager:*",
+                "kms:*",
+                "wafv2:*"
             ],
             "Resource": [
                 "*"
